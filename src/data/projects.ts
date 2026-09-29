@@ -1,0 +1,82 @@
+export type ImageEntry = {
+  url: string;
+  alt: string;
+  credit: string;
+};
+
+export type Project = {
+  id: string;
+  name: string;
+  category: string;
+  year: string;
+  meta: string[];
+  image: ImageEntry;
+  /** Layout hints for the asymmetric editorial grid. */
+  span: string;
+  aspect: string;
+  offset?: string;
+};
+
+/* TODO: Replace with real PIXEL STUDIO photography. */
+export const heroImage: ImageEntry = {
+  url: "https://images.unsplash.com/photo-1480714378408-72cf45d9be1b?w=2000&q=80&auto=format&fit=crop",
+  alt: "Aerial view of a dense city at night with glowing streets",
+  credit: "Pedro Lastra — Unsplash",
+};
+
+/* TODO: Replace with real PIXEL STUDIO photography. */
+export const aboutImage: ImageEntry = {
+  url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=80&auto=format&fit=crop",
+  alt: "Code on a dark screen reflected in a dim workspace",
+  credit: "Christopher Gower — Unsplash",
+};
+
+export const workHeading = "SELECTED WORK";
+
+/* TODO: Replace with real PIXEL STUDIO photography. */
+export const projects: Project[] = [
+  {
+    id: "raquira",
+    name: "RÁQUIRA",
+    category: "Photography / Visual Storytelling",
+    year: "2026",
+    meta: ["DOCUMENTARY", "35MM", "NATURAL LIGHT"],
+    image: {
+      url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1800&q=80&auto=format&fit=crop",
+      alt: "Narrow street at dusk lit by warm shop windows",
+      credit: "Ryoji Iwata — Unsplash",
+    },
+    span: "lg:col-span-8",
+    aspect: "aspect-[16/10]",
+  },
+  {
+    id: "el-alto",
+    name: "EL ALTO",
+    category: "Hospitality / Web Design",
+    year: "2026",
+    meta: ["INTERIORS", "ART DIRECTION", "WEB"],
+    image: {
+      url: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1400&q=80&auto=format&fit=crop",
+      alt: "Moody bar interior with low amber lighting",
+      credit: "Adam Jaime — Unsplash",
+    },
+    span: "lg:col-span-4",
+    aspect: "aspect-[3/4]",
+    offset: "lg:mt-32",
+  },
+  {
+    id: "digital-identity",
+    name: "DIGITAL IDENTITY",
+    category: "Web Development / Branding",
+    year: "2026",
+    meta: ["DESIGN SYSTEM", "TYPE", "MOTION"],
+    image: {
+      url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1800&q=80&auto=format&fit=crop",
+      alt: "Team workspace at night with screens showing code",
+      credit: "Annie Spratt — Unsplash",
+    },
+    span: "lg:col-span-7 lg:col-start-5",
+    aspect: "aspect-[4/3]",
+    offset: "lg:-mt-16",
+  },
+];

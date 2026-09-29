@@ -1,24 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Hero } from "@/components/sections/hero";
+import { Intro } from "@/components/sections/intro";
+import { Services } from "@/components/sections/services";
+import { SelectedWork } from "@/components/sections/selected-work";
+import { Photography } from "@/components/sections/photography";
+import { WebDevelopment } from "@/components/sections/web-development";
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+import { site } from "@/data/site";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: site.title },
+      { name: "description", content: site.description },
+      { property: "og:title", content: site.title },
+      { property: "og:description", content: site.description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useSmoothScroll();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <CustomCursor />
+      <Navbar />
+      <main id="main">
+        <Hero />
+        <Intro />
+        <Services />
+        <SelectedWork />
+        <Photography />
+        <WebDevelopment />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
