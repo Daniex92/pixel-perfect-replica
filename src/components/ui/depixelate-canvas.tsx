@@ -70,7 +70,7 @@ export function DepixelateCanvas({
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started && img.complete) {
+        if (entry?.isIntersecting && !started && img.complete) {
           started = true;
           run();
         }

@@ -31,7 +31,7 @@ export function PixelParticles({
     let raf = 0;
     let inView = true;
     const io = new IntersectionObserver(([e]) => {
-      inView = e.isIntersecting;
+      inView = Boolean(e?.isIntersecting);
     });
     io.observe(canvas);
 

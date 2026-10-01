@@ -68,7 +68,7 @@ export function PixelCanvas({
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        inView.current = entry.isIntersecting;
+        inView.current = Boolean(entry?.isIntersecting);
       },
       { rootMargin: "200px" },
     );

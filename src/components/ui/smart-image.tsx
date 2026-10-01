@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type SmartImageProps = {
   src: string;
   alt: string;
-  className?: string;
-  sizes?: string;
-  priority?: boolean;
-  width?: number;
-  height?: number;
+  className?: string | undefined;
+  sizes?: string | undefined;
+  priority?: boolean | undefined;
+  width?: number | undefined;
+  height?: number | undefined;
 };
 
 /**
@@ -25,6 +25,13 @@ export function SmartImage({
   height = 1200,
 }: SmartImageProps) {
   const [state, setState] = useState<"loading" | "loaded" | "error">("loading");
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  // Images cached or completed before hydration never fire onLoad.
+  useEffect(() => {
+    const el = imgRef.current;
+    if (el?.complete) setState(el.naturalWidth > 0 ? "loaded" : "error");
+  }, [src]);
 
   if (state === "error") {
     return (
@@ -42,6 +49,7 @@ export function SmartImage({
         <div aria-hidden className="absolute inset-0 bg-surface pixel-grid-fine" />
       )}
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         width={width}

@@ -28,9 +28,9 @@ export function Hero() {
       </motion.div>
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/80 to-background/45"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/55 to-background/25"
       />
-      <div aria-hidden className="absolute inset-0 -z-10 pixel-grid opacity-30" />
+      <div aria-hidden className="absolute inset-0 -z-10 pixel-grid opacity-20" />
 
       <div className="shell pb-16 pt-32 lg:pb-24">
         <motion.p

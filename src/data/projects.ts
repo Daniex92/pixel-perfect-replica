@@ -19,9 +19,9 @@ export type Project = {
 
 /* TODO: Replace with real PIXEL STUDIO photography. */
 export const heroImage: ImageEntry = {
-  url: "https://images.unsplash.com/photo-1480714378408-72cf45d9be1b?w=2000&q=80&auto=format&fit=crop",
-  alt: "Aerial view of a dense city at night with glowing streets",
-  credit: "Pedro Lastra — Unsplash",
+  url: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=2000&q=80&auto=format&fit=crop",
+  alt: "Downtown street canyon at dusk between tall lit towers",
+  credit: "Unsplash",
 };
 
 /* TODO: Replace with real PIXEL STUDIO photography. */
@@ -42,9 +42,9 @@ export const projects: Project[] = [
     year: "2026",
     meta: ["DOCUMENTARY", "35MM", "NATURAL LIGHT"],
     image: {
-      url: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1800&q=80&auto=format&fit=crop",
-      alt: "Narrow street at dusk lit by warm shop windows",
-      credit: "Ryoji Iwata — Unsplash",
+      url: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80&auto=format&fit=crop",
+      alt: "Aerial view of a dense city skyline at dusk beside the water",
+      credit: "Pedro Lastra — Unsplash",
     },
     span: "lg:col-span-8",
     aspect: "aspect-[16/10]",
@@ -71,9 +71,9 @@ export const projects: Project[] = [
     year: "2026",
     meta: ["DESIGN SYSTEM", "TYPE", "MOTION"],
     image: {
-      url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1800&q=80&auto=format&fit=crop",
-      alt: "Team workspace at night with screens showing code",
-      credit: "Annie Spratt — Unsplash",
+      url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1800&q=80&auto=format&fit=crop",
+      alt: "Lines of code glowing on a dark monitor",
+      credit: "Florian Olivo — Unsplash",
     },
     span: "lg:col-span-7 lg:col-start-5",
     aspect: "aspect-[4/3]",
