@@ -43,8 +43,8 @@ export const projects: Project[] = [
     meta: ["DOCUMENTARY", "35MM", "NATURAL LIGHT"],
     image: {
       url: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80&auto=format&fit=crop",
-      alt: "City street at night with light trails and glowing signs",
-      credit: "Denys Nevozhai — Unsplash",
+      alt: "Aerial view of a dense city skyline at dusk beside the water",
+      credit: "Pedro Lastra — Unsplash",
     },
     span: "lg:col-span-8",
     aspect: "aspect-[16/10]",
