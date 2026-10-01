@@ -36,8 +36,8 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
       if (e.key === "Tab") {
         const focusables = containerRef.current?.querySelectorAll<HTMLElement>("button");
         if (!focusables?.length) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
+        const first = focusables[0]!;
+        const last = focusables[focusables.length - 1]!;
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();
           last.focus();

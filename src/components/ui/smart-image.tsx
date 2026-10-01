@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 type SmartImageProps = {
   src: string;
   alt: string;
-  className?: string;
-  sizes?: string;
-  priority?: boolean;
-  width?: number;
-  height?: number;
+  className?: string | undefined;
+  sizes?: string | undefined;
+  priority?: boolean | undefined;
+  width?: number | undefined;
+  height?: number | undefined;
 };
 
 /**

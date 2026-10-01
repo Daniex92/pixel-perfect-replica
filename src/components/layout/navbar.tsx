@@ -30,8 +30,8 @@ export function Navbar() {
       if (e.key === "Tab") {
         const focusables = menuRef.current?.querySelectorAll<HTMLElement>("a,button");
         if (!focusables?.length) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
+        const first = focusables[0]!;
+        const last = focusables[focusables.length - 1]!;
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();
           last.focus();
