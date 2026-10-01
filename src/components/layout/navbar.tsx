@@ -51,14 +51,14 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-        scrolled
+        "fixed inset-x-0 top-0 z-[100] transition-[background-color,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        scrolled && !open
           ? "border-b border-border bg-background/70 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="shell flex h-16 items-center justify-between lg:h-20">
-        <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.name} — home`}>
+        <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
           <span
             aria-hidden
             className="h-1.5 w-1.5 bg-violet"
@@ -69,7 +69,7 @@ export function Navbar() {
           </span>
         </a>
 
-        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-9 md:flex">
           {nav.map((item) => {
             const isActive = active === item.href.replace("#", "");
             return (
@@ -98,7 +98,7 @@ export function Navbar() {
           type="button"
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setOpen((v) => !v)}
           className="relative z-[160] flex h-11 w-11 items-center justify-center md:hidden"
         >
@@ -130,7 +130,7 @@ export function Navbar() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[150] flex flex-col justify-center bg-background px-6 pixel-grid md:hidden"
           >
-            <nav aria-label="Mobile" className="flex flex-col gap-2">
+            <nav aria-label="Navegación móvil" className="flex flex-col gap-2">
               {nav.map((item, i) => (
                 <motion.a
                   key={item.href}

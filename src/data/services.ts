@@ -4,22 +4,22 @@ export type Service = {
   text: string;
 };
 
-export const servicesHeading = "WHAT WE CREATE";
+export const servicesHeading = "LO QUE CREAMOS";
 
 export const services: Service[] = [
   {
     number: "01",
-    title: "WEB DEVELOPMENT",
-    text: "Modern websites, landing pages and digital experiences designed around the identity of each project.",
+    title: "DESARROLLO WEB",
+    text: "Sitios web modernos, páginas de aterrizaje y experiencias digitales diseñadas según la identidad de cada proyecto.",
   },
   {
     number: "02",
-    title: "PHOTOGRAPHY",
-    text: "Professional photography for brands, products, people, hospitality and creative projects.",
+    title: "FOTOGRAFÍA",
+    text: "Fotografía profesional para marcas, productos, personas, espacios de hospitalidad y proyectos creativos.",
   },
   {
     number: "03",
-    title: "VISUAL CONTENT",
-    text: "Photography, short-form video, cinematic content and visual storytelling for digital platforms.",
+    title: "CONTENIDO VISUAL",
+    text: "Fotografía, vídeos breves, contenido cinematográfico y narrativas visuales para plataformas digitales.",
   },
 ];

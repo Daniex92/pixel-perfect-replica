@@ -30,7 +30,7 @@ export function Services() {
     <section id="services" className="border-t border-border">
       <div className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">02 / SERVICES</p>
+          <p className="label-mono">02 / SERVICIOS</p>
           <h2 className="mt-6 display-md">{servicesHeading}</h2>
         </Reveal>
 

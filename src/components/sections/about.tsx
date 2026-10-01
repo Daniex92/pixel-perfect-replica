@@ -8,7 +8,7 @@ export function About() {
     <section id="about" className="border-t border-border">
       <div className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">06 / ABOUT</p>
+          <p className="label-mono">06 / ESTUDIO</p>
         </Reveal>
 
         <div className="mt-6 grid gap-16 lg:grid-cols-12 lg:gap-x-10">

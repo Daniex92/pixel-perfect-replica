@@ -21,16 +21,16 @@ export type GalleryItem = ImageEntry & {
   aspect: string;
 };
 
-export const photographyHeading = ["EVERY IMAGE", "TELLS A STORY."];
+export const photographyHeading = ["CADA IMAGEN", "CUENTA UNA HISTORIA."];
 
 /* TODO: Replace with real PIXEL STUDIO photography. */
 export const gallery: GalleryItem[] = [
   {
     id: "p-01",
     category: "PORTRAIT",
-    caption: "Studio portrait, single source",
+    caption: "Retrato de estudio, una sola fuente de luz",
     url: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=1200&q=80&auto=format&fit=crop",
-    alt: "Portrait of a man lit by a single hard light against darkness",
+    alt: "Retrato de un hombre iluminado por una única luz intensa sobre un fondo oscuro",
     credit: "Ayo Ogunseinde — Unsplash",
     span: "lg:col-span-4",
     aspect: "aspect-[3/4]",
@@ -38,9 +38,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "p-02",
     category: "PORTRAIT",
-    caption: "Available light, late afternoon",
+    caption: "Luz natural, última hora de la tarde",
     url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=80&auto=format&fit=crop",
-    alt: "Portrait of a woman turned toward soft window light",
+    alt: "Retrato de una mujer mirando hacia la luz suave de una ventana",
     credit: "Ivana Cajina — Unsplash",
     span: "lg:col-span-3",
     aspect: "aspect-square",
@@ -48,9 +48,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "l-01",
     category: "LANDSCAPE",
-    caption: "Ridge line, blue hour",
+    caption: "Cresta montañosa, hora azul",
     url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80&auto=format&fit=crop",
-    alt: "Fog drifting between dark forested mountain ridges",
+    alt: "Niebla entre crestas de montañas cubiertas de bosque",
     credit: "Sebastian Unrau — Unsplash",
     span: "lg:col-span-5",
     aspect: "aspect-[4/3]",
@@ -58,9 +58,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "l-02",
     category: "LANDSCAPE",
-    caption: "Valley at dusk",
+    caption: "Valle al anochecer",
     url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop",
-    alt: "Mountain lake at dusk under a heavy sky",
+    alt: "Lago de montaña al anochecer bajo un cielo cubierto",
     credit: "Kalen Emsley — Unsplash",
     span: "lg:col-span-7",
     aspect: "aspect-[16/9]",
@@ -68,9 +68,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "h-01",
     category: "HOSPITALITY",
-    caption: "Counter service, low light",
+    caption: "Servicio en barra, luz tenue",
     url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop",
-    alt: "Restaurant interior with warm pendant lights over tables",
+    alt: "Interior de restaurante con lámparas cálidas sobre las mesas",
     credit: "Jason Leung — Unsplash",
     span: "lg:col-span-5",
     aspect: "aspect-[3/2]",
@@ -78,9 +78,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "h-02",
     category: "HOSPITALITY",
-    caption: "Espresso, morning shift",
+    caption: "Espresso, turno de mañana",
     url: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&q=80&auto=format&fit=crop",
-    alt: "Cup of coffee on a dark cafe counter",
+    alt: "Taza de café sobre la barra oscura de una cafetería",
     credit: "Nathan Dumlao — Unsplash",
     span: "lg:col-span-3",
     aspect: "aspect-square",
@@ -88,9 +88,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "pr-01",
     category: "PRODUCT",
-    caption: "Footwear on black",
+    caption: "Calzado sobre fondo negro",
     url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80&auto=format&fit=crop",
-    alt: "Red sneaker photographed on a dark background",
+    alt: "Zapatilla roja fotografiada sobre un fondo oscuro",
     credit: "Mnz — Unsplash",
     span: "lg:col-span-4",
     aspect: "aspect-[4/5]",
@@ -98,9 +98,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "pr-02",
     category: "PRODUCT",
-    caption: "Timepiece, macro detail",
+    caption: "Reloj, detalle macro",
     url: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=80&auto=format&fit=crop",
-    alt: "Wristwatch on a dark surface with directional light",
+    alt: "Reloj de pulsera sobre una superficie oscura con luz direccional",
     credit: "Aleksander Fox — Unsplash",
     span: "lg:col-span-4",
     aspect: "aspect-square",
@@ -108,9 +108,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "e-01",
     category: "EVENTS",
-    caption: "Stage lights, second set",
+    caption: "Luces del escenario, segundo concierto",
     url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80&auto=format&fit=crop",
-    alt: "Audience seen from behind facing a lit stage at an event",
+    alt: "Público de espaldas frente al escenario iluminado de un evento",
     credit: "Product School — Unsplash",
     span: "lg:col-span-7",
     aspect: "aspect-[16/9]",
@@ -118,9 +118,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "e-02",
     category: "EVENTS",
-    caption: "Crowd, front row",
+    caption: "Público, primera fila",
     url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1400&q=80&auto=format&fit=crop",
-    alt: "Audience silhouettes in front of a brightly lit stage",
+    alt: "Siluetas del público frente a un escenario muy iluminado",
     credit: "Anthony Delanoix — Unsplash",
     span: "lg:col-span-5",
     aspect: "aspect-[3/2]",
@@ -128,9 +128,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "s-01",
     category: "STREET",
-    caption: "Crossing, after rain",
+    caption: "Cruce, después de la lluvia",
     url: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80&auto=format&fit=crop",
-    alt: "City street at night with reflections on wet asphalt",
+    alt: "Calle de la ciudad de noche, con reflejos sobre el asfalto mojado",
     credit: "Alex Knight — Unsplash",
     span: "lg:col-span-6",
     aspect: "aspect-[3/2]",
@@ -138,9 +138,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "s-02",
     category: "STREET",
-    caption: "Avenue, blue hour",
+    caption: "Avenida, hora azul",
     url: "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&q=80&auto=format&fit=crop",
-    alt: "Tall buildings at dusk with lit windows",
+    alt: "Edificios altos al anochecer con las ventanas iluminadas",
     credit: "Denys Nevozhai — Unsplash",
     span: "lg:col-span-6",
     aspect: "aspect-[3/2]",
@@ -148,9 +148,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "s-03",
     category: "STREET",
-    caption: "Storefront, closing time",
+    caption: "Escaparate, hora de cierre",
     url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=80&auto=format&fit=crop",
-    alt: "Shop front lit from inside on a dark street",
+    alt: "Fachada de una tienda iluminada desde dentro en una calle oscura",
     credit: "Ashim D'Silva — Unsplash",
     span: "lg:col-span-4",
     aspect: "aspect-[4/3]",
@@ -158,9 +158,9 @@ export const gallery: GalleryItem[] = [
   {
     id: "l-03",
     category: "LANDSCAPE",
-    caption: "Coastline, last light",
+    caption: "Costa, últimas luces del día",
     url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1600&q=80&auto=format&fit=crop",
-    alt: "Dark rocky coastline under a fading sky",
+    alt: "Costa rocosa y oscura bajo un cielo que se apaga",
     credit: "Luca Bravo — Unsplash",
     span: "lg:col-span-8",
     aspect: "aspect-[16/10]",

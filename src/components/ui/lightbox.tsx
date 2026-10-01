@@ -63,7 +63,7 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
       ref={containerRef}
       role="dialog"
       aria-modal="true"
-      aria-label={`Photograph ${index + 1} of ${items.length}: ${item.alt}`}
+      aria-label={`Fotografía ${index + 1} de ${items.length}: ${item.alt}`}
       className="fixed inset-0 z-[150] flex flex-col bg-background/96 backdrop-blur-sm"
     >
       <div className="flex items-center justify-between gap-4 px-6 py-5 lg:px-10">
@@ -76,7 +76,7 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
           onClick={onClose}
           className="label-mono border border-border px-3 py-2 text-foreground transition-colors hover:border-violet"
         >
-          CLOSE ESC
+          CERRAR ESC
         </button>
       </div>
 
@@ -92,10 +92,10 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
         <button
           type="button"
           onClick={prev}
-          aria-label="Previous photograph"
+          aria-label="Fotografía anterior"
           className="label-mono border border-border px-4 py-3 text-foreground transition-colors hover:border-violet"
         >
-          ← PREV
+          ← ANTERIOR
         </button>
         <div className="min-w-0 text-center">
           <p className="truncate text-sm text-foreground">{item.caption}</p>
@@ -104,10 +104,10 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
         <button
           type="button"
           onClick={next}
-          aria-label="Next photograph"
+          aria-label="Fotografía siguiente"
           className="label-mono border border-border px-4 py-3 text-foreground transition-colors hover:border-violet"
         >
-          NEXT →
+          SIGUIENTE →
         </button>
       </div>
     </div>

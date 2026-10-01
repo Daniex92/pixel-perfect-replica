@@ -7,17 +7,17 @@ import { Reveal, RevealLines } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const projectTypes = [
-  "Web Development",
-  "Photography",
-  "Visual Content",
-  "Other",
+  "Desarrollo web",
+  "Fotografía",
+  "Contenido visual",
+  "Otro",
 ] as const;
 
 const schema = z.object({
-  name: z.string().min(2, "Please enter your name."),
-  email: z.string().email("Please enter a valid email address."),
-  projectType: z.enum(projectTypes, { message: "Please choose a project type." }),
-  message: z.string().min(10, "Please add a few more details (10 characters minimum)."),
+  name: z.string().min(2, "Escribe tu nombre."),
+  email: z.string().email("Escribe una dirección de correo válida."),
+  projectType: z.enum(projectTypes, { message: "Elige un tipo de proyecto." }),
+  message: z.string().min(10, "Añade algunos detalles más (mínimo 10 caracteres)."),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -47,7 +47,7 @@ export function Contact() {
     <section id="contact" className="border-t border-border">
       <div className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">07 / CONTACT</p>
+          <p className="label-mono">07 / CONTACTO</p>
         </Reveal>
 
         <div className="mt-6 grid gap-16 lg:grid-cols-12 lg:gap-x-10">
@@ -63,7 +63,7 @@ export function Contact() {
 
               <dl className="mt-12 space-y-5">
                 <div>
-                  <dt className="label-mono">EMAIL</dt>
+                    <dt className="label-mono">CORREO</dt>
                   <dd className="mt-1">
                     <a
                       href={`mailto:${contact.email}`}
@@ -78,7 +78,7 @@ export function Contact() {
                   <dd className="mt-1 text-foreground">{contact.whatsapp}</dd>
                 </div>
                 <div>
-                  <dt className="label-mono">LOCATION</dt>
+                    <dt className="label-mono">UBICACIÓN</dt>
                   <dd className="mt-1 text-foreground">{contact.location}</dd>
                 </div>
               </dl>
@@ -104,13 +104,13 @@ export function Contact() {
               <div className="space-y-9">
                 <div>
                   <label htmlFor="name" className="label-mono">
-                    NAME
+                    NOMBRE
                   </label>
                   <input
                     id="name"
                     type="text"
                     autoComplete="name"
-                    placeholder="Your name"
+                    placeholder="Tu nombre"
                     aria-invalid={Boolean(errors.name)}
                     aria-describedby={errors.name ? "name-error" : undefined}
                     className={cn(fieldClass, errors.name && "border-destructive")}
@@ -125,7 +125,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="email" className="label-mono">
-                    EMAIL
+                    CORREO
                   </label>
                   <input
                     id="email"
@@ -146,7 +146,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="projectType" className="label-mono">
-                    PROJECT TYPE
+                    TIPO DE PROYECTO
                   </label>
                   <select
                     id="projectType"
@@ -157,7 +157,7 @@ export function Contact() {
                     {...register("projectType")}
                   >
                     <option value="" disabled>
-                      Select one
+                      Selecciona una opción
                     </option>
                     {projectTypes.map((t) => (
                       <option key={t} value={t} className="bg-surface">
@@ -174,12 +174,12 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="message" className="label-mono">
-                    MESSAGE
+                    MENSAJE
                   </label>
                   <textarea
                     id="message"
                     rows={4}
-                    placeholder="Tell us about the project"
+                    placeholder="Cuéntanos sobre el proyecto"
                     aria-invalid={Boolean(errors.message)}
                     aria-describedby={errors.message ? "message-error" : undefined}
                     className={cn(fieldClass, "resize-none", errors.message && "border-destructive")}
@@ -199,10 +199,10 @@ export function Contact() {
                   disabled={isSubmitting}
                   className="label-mono min-h-[44px] border border-violet/50 bg-violet/10 px-6 py-4 text-foreground transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:glow-violet disabled:opacity-50"
                 >
-                  {isSubmitting ? "SENDING…" : contactSection.cta}
+                  {isSubmitting ? "ENVIANDO…" : contactSection.cta}
                 </button>
                 <p aria-live="polite" className="label-mono">
-                  {status === "success" ? "MESSAGE SENT — WE'LL BE IN TOUCH." : ""}
+                  {status === "success" ? "MENSAJE ENVIADO — NOS PONDREMOS EN CONTACTO." : ""}
                 </p>
               </div>
             </form>

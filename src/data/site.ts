@@ -2,26 +2,27 @@ export type NavItem = { label: string; href: string };
 
 export const site = {
   name: "PIXEL STUDIO",
-  title: "PIXEL STUDIO — Digital Experiences & Visual Stories",
+  title: "PIXEL STUDIO — Experiencias digitales e historias visuales",
   description:
-    "PIXEL STUDIO creates digital experiences, websites and professional visual content through technology, photography and creative direction.",
-  label: "CREATIVE STUDIO / 2026",
-  disciplines: "WEB DEVELOPMENT · PHOTOGRAPHY · VISUAL CONTENT",
+    "PIXEL STUDIO crea experiencias digitales, sitios web y contenido visual profesional mediante tecnología, fotografía y dirección creativa.",
+  label: "ESTUDIO CREATIVO / 2026",
+  disciplines: "DESARROLLO WEB · FOTOGRAFÍA · CONTENIDO VISUAL",
   copyright: "© 2026 PIXEL STUDIO",
 };
 
 export const nav: NavItem[] = [
-  { label: "WORK", href: "#work" },
-  { label: "SERVICES", href: "#services" },
-  { label: "ABOUT", href: "#about" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "INICIO", href: "/" },
+  { label: "SERVICIOS", href: "#services" },
+  { label: "PROYECTOS", href: "#work" },
+  { label: "ESTUDIO", href: "#about" },
+  { label: "CONTACTO", href: "#contact" },
 ];
 
 /** TODO: Replace placeholders with real PIXEL STUDIO contact details. */
 export const contact = {
   email: "hello@pixelstudio.example",
   whatsapp: "+00 000 000 0000",
-  location: "Available worldwide / remote",
+  location: "Disponible en todo el mundo / remoto",
 };
 
 /** TODO: Replace placeholders with real PIXEL STUDIO social profiles. */
@@ -35,55 +36,55 @@ export const socials = [
 export const hero = {
   titleTop: "PIXEL",
   titleBottom: "STUDIO",
-  tagline: "DIGITAL EXPERIENCES. VISUAL STORIES.",
-  text: "Web experiences and visual content built with technology, creativity and intention.",
-  primaryCta: "EXPLORE WORK",
-  ghostCta: "START A PROJECT",
-  scrollIndicator: "SCROLL TO EXPLORE ↓",
+  tagline: "EXPERIENCIAS DIGITALES. HISTORIAS VISUALES.",
+  text: "Experiencias web y contenido visual creados con tecnología, creatividad e intención.",
+  primaryCta: "VER PROYECTOS",
+  ghostCta: "INICIAR UN PROYECTO",
+  scrollIndicator: "DESPLÁZATE PARA EXPLORAR ↓",
 };
 
 export const intro = {
-  lines: ["WE TURN IDEAS", "INTO DIGITAL", "EXPERIENCES."],
+  lines: ["TRANSFORMAMOS IDEAS", "EN EXPERIENCIAS", "DIGITALES."],
   paragraph:
-    "PIXEL STUDIO combines web development and photography to create digital experiences and visual identities.",
+    "PIXEL STUDIO combina el desarrollo web y la fotografía para crear experiencias digitales e identidades visuales.",
 };
 
 export const about = {
-  lines: ["PIXEL IS WHERE", "IMAGE MEETS CODE."],
+  lines: ["PIXEL ES DONDE", "LA IMAGEN SE UNE AL CÓDIGO."],
   paragraphs: [
-    "We work slowly on purpose. A frame is chosen, a line of code is written, and both carry the same intention: to say something true about the work in front of us.",
-    "Photography taught us to look. Development taught us to build. The pixel is where those two habits meet — small enough to be invisible, precise enough to change everything.",
+    "Trabajamos sin prisa, a propósito. Elegimos un encuadre, escribimos una línea de código y ambos nacen de la misma intención: expresar algo auténtico sobre el trabajo que tenemos delante.",
+    "La fotografía nos enseñó a mirar. El desarrollo, a construir. El píxel es el punto donde se encuentran ambos hábitos: tan pequeño que pasa inadvertido y tan preciso que puede cambiarlo todo.",
   ],
 };
 
 export const webdev = {
-  lines: ["BUILT FOR THE", "DIGITAL WORLD."],
+  lines: ["CREADO PARA EL", "MUNDO DIGITAL."],
   focus: [
     {
-      title: "Visual identity",
-      text: "Every interface is designed around the character of the project it belongs to.",
+      title: "Identidad visual",
+      text: "Cada interfaz se diseña en torno a la personalidad del proyecto al que pertenece.",
     },
     {
-      title: "Performance",
-      text: "Light pages, fast first paint, no weight that does not earn its place.",
+      title: "Rendimiento",
+      text: "Páginas ligeras, carga inicial rápida y nada de peso innecesario.",
     },
     {
-      title: "Responsive design",
-      text: "Layouts rethought per screen, not compressed versions of the desktop.",
+      title: "Diseño adaptable",
+      text: "Diseños pensados para cada pantalla, no versiones comprimidas del escritorio.",
     },
     {
-      title: "User experience",
-      text: "Clear structure, readable type and motion that guides instead of decorating.",
+      title: "Experiencia de usuario",
+      text: "Estructura clara, tipografía legible y movimiento que guía en lugar de decorar.",
     },
     {
-      title: "Modern technologies",
-      text: "A current, typed front-end stack chosen for longevity and maintainability.",
+      title: "Tecnologías modernas",
+      text: "Herramientas actuales y tipadas, elegidas para facilitar la evolución y el mantenimiento.",
     },
   ],
 };
 
 export const contactSection = {
-  lines: ["LET'S CREATE", "SOMETHING DISTINCT."],
-  text: "Have an idea, project or story worth bringing to life?",
-  cta: "START A PROJECT",
+  lines: ["CREEMOS", "ALGO ÚNICO."],
+  text: "¿Tienes una idea, un proyecto o una historia que merece cobrar vida?",
+  cta: "INICIAR UN PROYECTO",
 };

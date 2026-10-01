@@ -67,7 +67,7 @@ export function WebDevelopment() {
     <section id="web" className="border-t border-border">
       <div ref={ref} className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">05 / WEB DEVELOPMENT</p>
+          <p className="label-mono">05 / DESARROLLO WEB</p>
         </Reveal>
         <h2 className="mt-6 display-lg">
           <RevealLines

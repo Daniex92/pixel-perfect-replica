@@ -15,7 +15,7 @@ export function SelectedWork() {
     <section id="work" className="border-t border-border">
       <div className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">03 / WORK</p>
+          <p className="label-mono">03 / PROYECTOS</p>
           <h2 className="mt-6 display-md">{workHeading}</h2>
         </Reveal>
 
@@ -35,7 +35,7 @@ export function SelectedWork() {
                   viewport={{ once: true, margin: "-8% 0px" }}
                   transition={{ duration: 1, delay: i * 0.06, ease: EASE }}
                   className={cn("relative crop-marks overflow-hidden", project.aspect)}
-                  data-cursor-label="VIEW"
+                  data-cursor-label="VER"
                 >
                   <PixelCanvas
                     src={project.image.url}

@@ -13,6 +13,16 @@ import { cn } from "@/lib/utils";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+const categoryLabels: Record<GalleryCategory, string> = {
+  ALL: "TODAS",
+  PORTRAIT: "RETRATO",
+  LANDSCAPE: "PAISAJE",
+  HOSPITALITY: "HOSPITALIDAD",
+  PRODUCT: "PRODUCTO",
+  EVENTS: "EVENTOS",
+  STREET: "CALLE",
+};
+
 export function Photography() {
   const [filter, setFilter] = useState<GalleryCategory>("ALL");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -26,7 +36,7 @@ export function Photography() {
     <section id="photography" className="border-t border-border bg-surface/40">
       <div className="shell py-24 lg:py-36">
         <Reveal>
-          <p className="label-mono">04 / PHOTOGRAPHY</p>
+          <p className="label-mono">04 / FOTOGRAFÍA</p>
         </Reveal>
         <h2 className="mt-6 display-lg">
           <RevealLines
@@ -37,7 +47,7 @@ export function Photography() {
 
         <div
           role="tablist"
-          aria-label="Filter photographs by category"
+          aria-label="Filtrar fotografías por categoría"
           className="no-scrollbar mt-12 flex gap-2 overflow-x-auto pb-1"
         >
           {galleryCategories.map((cat) => {
@@ -56,7 +66,7 @@ export function Photography() {
                     : "border-border hover:border-violet/40 hover:text-foreground",
                 )}
               >
-                {cat}
+                {categoryLabels[cat]}
               </button>
             );
           })}
@@ -75,7 +85,7 @@ export function Photography() {
                 <SmartImage src={item.url} alt={item.alt} />
               </div>
               <p className="label-mono mt-3">
-                {item.category} — {item.caption}
+                {categoryLabels[item.category]} — {item.caption}
               </p>
             </button>
           ))}
@@ -96,9 +106,9 @@ export function Photography() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(i)}
-                  data-cursor-label="VIEW"
+                  data-cursor-label="VER"
                   className="group block w-full text-left"
-                  aria-label={`Open photograph: ${item.alt}`}
+                  aria-label={`Abrir fotografía: ${item.alt}`}
                 >
                   <div className={cn("overflow-hidden", item.aspect)}>
                     <SmartImage
@@ -109,7 +119,7 @@ export function Photography() {
                     />
                   </div>
                   <p className="label-mono -mt-3 ml-3 inline-block bg-background px-3 py-2 transition-colors group-hover:text-foreground">
-                    {item.category} — {item.caption}
+                    {categoryLabels[item.category]} — {item.caption}
                   </p>
                 </button>
               </motion.div>
