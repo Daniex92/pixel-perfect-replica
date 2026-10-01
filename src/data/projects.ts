@@ -20,8 +20,8 @@ export type Project = {
 /* TODO: Replace with real PIXEL STUDIO photography. */
 export const heroImage: ImageEntry = {
   url: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=2000&q=80&auto=format&fit=crop",
-  alt: "City skyline at night with lit towers above dark water",
-  credit: "Dan Freeman — Unsplash",
+  alt: "Downtown street canyon at dusk between tall lit towers",
+  credit: "Unsplash",
 };
 
 /* TODO: Replace with real PIXEL STUDIO photography. */
