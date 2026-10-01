@@ -17,22 +17,16 @@ export type Project = {
   offset?: string;
 };
 
-/* Importaciones */
-
-import heroimg from "@/assets/hero.jpg";
-import paisaje01 from "@/assets/paisaje01.jpg";
-import retrato01 from "@/assets/retrato01.jpg";
-
 /* TODO: Replace with real PIXEL STUDIO photography. */
 export const heroImage: ImageEntry = {
-  url: "heroimg",
+  url: "/",
   alt: "Calle del centro de la ciudad al anochecer, entre edificios iluminados",
   credit: "Unsplash",
 };
 
 /* TODO: Replace with real PIXEL STUDIO photography. */
 export const aboutImage: ImageEntry = {
-  url: "src/assets/pixel.jpg",
+  url: "/",
   alt: "Código en una pantalla oscura, reflejado en un espacio de trabajo tenue",
   credit: "Daniex_Photo — Pixel Studio",
 };

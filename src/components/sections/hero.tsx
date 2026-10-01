@@ -4,6 +4,10 @@ import { heroImage } from "@/data/projects";
 import { SmartImage } from "@/components/ui/smart-image";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
+import heroImg from "@/assets/hero.jpg";
+import paisaje01 from "@/assets/paisaje01.jpg";
+
+
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
@@ -18,7 +22,7 @@ export function Hero() {
     >
       <motion.div style={{ y }} className="absolute inset-0 -z-10 scale-105">
         <SmartImage
-          src={heroImage.url}
+          src={heroImg}
           alt={heroImage.alt}
           priority
           sizes="100vw"
