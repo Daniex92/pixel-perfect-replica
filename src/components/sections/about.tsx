@@ -2,6 +2,7 @@ import { about } from "@/data/site";
 import { aboutImage } from "@/data/projects";
 import { DepixelateCanvas } from "@/components/ui/depixelate-canvas";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
+import test from "@/assets/pixel.jpg";
 
 export function About() {
   return (
@@ -31,7 +32,7 @@ export function About() {
           <Reveal delay={0.2} className="lg:col-span-5 lg:col-start-8 lg:mt-10">
             <div className="crop-marks">
               <DepixelateCanvas
-                src={aboutImage.url}
+                src={test}
                 alt={aboutImage.alt}
                 className="aspect-[4/5]"
               />

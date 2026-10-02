@@ -9,6 +9,7 @@ import {
 import { SmartImage } from "@/components/ui/smart-image";
 import { Lightbox } from "@/components/ui/lightbox";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -26,6 +27,8 @@ const categoryLabels: Record<GalleryCategory, string> = {
 export function Photography() {
   const [filter, setFilter] = useState<GalleryCategory>("ALL");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeRippleId, setActiveRippleId] = useState<string | null>(null);
+  const reducedMotion = usePrefersReducedMotion();
 
   const items = useMemo(
     () => (filter === "ALL" ? gallery : gallery.filter((g) => g.category === filter)),
@@ -84,7 +87,7 @@ export function Photography() {
               <div className={cn("overflow-hidden", item.aspect)}>
                 <SmartImage src={item.url} alt={item.alt} />
               </div>
-              <p className="label-mono mt-3">
+              <p className="label-mono mt-3 block text-muted-foreground">
                 {categoryLabels[item.category]} — {item.caption}
               </p>
             </button>
@@ -103,22 +106,71 @@ export function Photography() {
                 transition={{ duration: 0.6, delay: (i % 4) * 0.05, ease: EASE }}
                 className={cn("relative", item.span ?? "col-span-4")}
               >
+                {activeRippleId === item.id && !reducedMotion && (
+                  <svg key={item.id} aria-hidden="true" className="absolute h-0 w-0">
+                    <filter
+                      id={`gallery-ripple-filter-${item.id}`}
+                      x="-10%"
+                      y="-10%"
+                      width="120%"
+                      height="120%"
+                    >
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.012 0.025"
+                        numOctaves="1"
+                        seed={i + 1}
+                        result="ripple-noise"
+                      />
+                      <feDisplacementMap
+                        in="SourceGraphic"
+                        in2="ripple-noise"
+                        scale="0"
+                        xChannelSelector="R"
+                        yChannelSelector="G"
+                      >
+                        <animate
+                          attributeName="scale"
+                          values="0;8;0"
+                          dur="1s"
+                          repeatCount="1"
+                          fill="freeze"
+                        />
+                      </feDisplacementMap>
+                    </filter>
+                  </svg>
+                )}
                 <button
                   type="button"
                   onClick={() => setOpenIndex(i)}
+                  onMouseEnter={() => setActiveRippleId(item.id)}
+                  onMouseLeave={() => setActiveRippleId(null)}
+                  onFocus={() => setActiveRippleId(item.id)}
+                  onBlur={() => setActiveRippleId(null)}
                   data-cursor-label="VER"
                   className="group block w-full text-left"
                   aria-label={`Abrir fotografía: ${item.alt}`}
                 >
-                  <div className={cn("overflow-hidden", item.aspect)}>
-                    <SmartImage
-                      src={item.url}
-                      alt={item.alt}
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
-                    />
+                  <div className={cn("relative overflow-hidden", item.aspect)}>
+                    <div
+                      className="h-full w-full"
+                      style={{
+                        filter:
+                          activeRippleId === item.id && !reducedMotion
+                            ? `url(#gallery-ripple-filter-${item.id})`
+                            : undefined,
+                      }}
+                    >
+                      <SmartImage
+                        src={item.url}
+                        alt={item.alt}
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        className="transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                      />
+                    </div>
+                    <span aria-hidden="true" className="gallery-ripple" />
                   </div>
-                  <p className="label-mono -mt-3 ml-3 inline-block bg-background px-3 py-2 transition-colors group-hover:text-foreground">
+                  <p className="label-mono mt-3 block text-muted-foreground transition-colors group-hover:text-foreground">
                     {categoryLabels[item.category]} — {item.caption}
                   </p>
                 </button>

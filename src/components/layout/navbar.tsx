@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { nav, site } from "@/data/site";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo_transp.png";
 
 const SECTION_IDS = nav.map((n) => n.href.replace("#", ""));
 
@@ -59,10 +60,11 @@ export function Navbar() {
     >
       <div className="shell flex h-16 items-center justify-between lg:h-20">
         <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
-          <span
-            aria-hidden
-            className="h-1.5 w-1.5 bg-violet"
-            style={{ boxShadow: "var(--glow-dot)" }}
+          <img
+            src={logo}
+            alt={site.name}
+            className="h-6 w-6 object-contain md:h-10 md:w-10"
+            style={{ filter: "drop-shadow(0px 0px 10px rgb(110 41 255 / 5.7))" }}
           />
           <span className="text-[0.78rem] font-normal uppercase tracking-[0.22em]">
             {site.name}

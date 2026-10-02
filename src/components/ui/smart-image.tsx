@@ -9,6 +9,7 @@ type SmartImageProps = {
   priority?: boolean | undefined;
   width?: number | undefined;
   height?: number | undefined;
+  fit?: "cover" | "contain" | undefined;
 };
 
 /**
@@ -23,6 +24,7 @@ export function SmartImage({
   priority = false,
   width = 1600,
   height = 1200,
+  fit = "cover",
 }: SmartImageProps) {
   const [state, setState] = useState<"loading" | "loaded" | "error">("loading");
   const imgRef = useRef<HTMLImageElement | null>(null);
@@ -44,9 +46,21 @@ export function SmartImage({
   }
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-surface">
+    <div
+      className={cn(
+        "relative h-full w-full overflow-hidden",
+        fit === "contain" ? "bg-transparent" : "bg-surface",
+        fit === "contain" && "flex items-center justify-center",
+      )}
+    >
       {state === "loading" && (
-        <div aria-hidden className="absolute inset-0 bg-surface pixel-grid-fine" />
+        <div
+          aria-hidden
+          className={cn(
+            "absolute inset-0 pixel-grid-fine",
+            fit === "contain" ? "bg-transparent" : "bg-surface",
+          )}
+        />
       )}
       <img
         ref={imgRef}
@@ -62,7 +76,10 @@ export function SmartImage({
         onLoad={() => setState("loaded")}
         onError={() => setState("error")}
         className={cn(
-          "h-full w-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          fit === "contain"
+            ? "h-auto w-auto max-h-full max-w-full object-contain"
+            : "h-full w-full object-cover",
+          "transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
           state === "loaded" ? "opacity-100" : "opacity-0",
           className,
         )}

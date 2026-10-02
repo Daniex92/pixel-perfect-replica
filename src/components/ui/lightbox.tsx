@@ -1,9 +1,18 @@
 import { useCallback, useEffect, useRef } from "react";
+import { X } from "lucide-react";
 import { SmartImage } from "./smart-image";
-import type { GalleryItem } from "@/data/gallery";
+export type LightboxItem = {
+  url: string;
+  alt: string;
+  category: string;
+  caption: string;
+  credit: string;
+  year?: string;
+  meta?: string[];
+};
 
 type LightboxProps = {
-  items: GalleryItem[];
+  items: LightboxItem[];
   index: number;
   onClose: () => void;
   onIndexChange: (index: number) => void;
@@ -68,23 +77,23 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
     >
       <div className="flex items-center justify-between gap-4 px-6 py-5 lg:px-10">
         <p className="label-mono">
-          {item.category} / {String(index + 1).padStart(2, "0")} —{" "}
+          {item.category}{item.year ? ` / ${item.year}` : ""} / {String(index + 1).padStart(2, "0")} —{" "}
           {String(items.length).padStart(2, "0")}
         </p>
         <button
           type="button"
           onClick={onClose}
-          className="label-mono border border-border px-3 py-2 text-foreground transition-colors hover:border-violet"
+          aria-label="Cerrar fotografía"
+          title="Cerrar (Esc)"
+          className="flex h-11 w-11 items-center justify-center border border-border text-foreground transition-colors hover:border-violet"
         >
-          CERRAR ESC
+          <X aria-hidden="true" size={18} />
         </button>
       </div>
 
       <div className="relative flex min-h-0 flex-1 items-center justify-center px-6 pb-4 lg:px-20">
-        <div className="max-h-full w-full max-w-5xl">
-          <div className="max-h-[70svh] overflow-hidden">
-            <SmartImage src={item.url} alt={item.alt} priority className="object-contain" />
-          </div>
+        <div className="h-[70svh] max-h-full w-full max-w-5xl">
+          <SmartImage src={item.url} alt={item.alt} priority fit="contain" />
         </div>
       </div>
 
@@ -99,6 +108,7 @@ export function Lightbox({ items, index, onClose, onIndexChange }: LightboxProps
         </button>
         <div className="min-w-0 text-center">
           <p className="truncate text-sm text-foreground">{item.caption}</p>
+          {item.meta && <p className="label-mono mt-1 truncate">{item.meta.join(" · ")}</p>}
           <p className="label-mono mt-1 truncate">{item.credit}</p>
         </div>
         <button

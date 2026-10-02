@@ -4,12 +4,24 @@ import { projects, workHeading } from "@/data/projects";
 import { PixelCanvas } from "@/components/ui/pixel-canvas";
 import { PixelParticles } from "@/components/ui/pixel-particles";
 import { Reveal } from "@/components/ui/reveal";
+import { Lightbox, type LightboxItem } from "@/components/ui/lightbox";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+const lightboxItems: LightboxItem[] = projects.map((project) => ({
+  url: project.image.url,
+  alt: project.image.alt,
+  category: project.category,
+  caption: project.name,
+  credit: project.image.credit,
+  year: project.year,
+  meta: project.meta,
+}));
+
 export function SelectedWork() {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="work" className="border-t border-border">
@@ -29,12 +41,18 @@ export function SelectedWork() {
                 onMouseEnter={() => setHovered(project.id)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <motion.div
+                <motion.button
+                  type="button"
+                  onClick={() => setOpenIndex(i)}
+                  aria-label={`Abrir proyecto: ${project.name}`}
                   initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0 }}
                   whileInView={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
                   viewport={{ once: true, margin: "-8% 0px" }}
                   transition={{ duration: 1, delay: i * 0.06, ease: EASE }}
-                  className={cn("relative crop-marks overflow-hidden", project.aspect)}
+                  className={cn(
+                    "relative block w-full crop-marks overflow-hidden text-left",
+                    project.aspect,
+                  )}
                   data-cursor-label="VER"
                 >
                   <PixelCanvas
@@ -68,7 +86,7 @@ export function SelectedWork() {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
+                </motion.button>
 
                 <div className="mt-5 flex items-baseline justify-between gap-6 border-t border-border pt-4">
                   <div>
@@ -84,6 +102,15 @@ export function SelectedWork() {
           })}
         </div>
       </div>
+
+      {openIndex !== null && (
+        <Lightbox
+          items={lightboxItems}
+          index={openIndex}
+          onClose={() => setOpenIndex(null)}
+          onIndexChange={setOpenIndex}
+        />
+      )}
     </section>
   );
 }

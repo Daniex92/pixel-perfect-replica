@@ -20,8 +20,8 @@ export const nav: NavItem[] = [
 
 /** TODO: Replace placeholders with real PIXEL STUDIO contact details. */
 export const contact = {
-  email: "hello@pixelstudio.example",
-  whatsapp: "+00 000 000 0000",
+  email: "pixelstudio@gmail.com",
+  whatsapp: "+57 321 993 1584",
   location: "Disponible en todo el mundo / remoto",
 };
 
@@ -29,7 +29,6 @@ export const contact = {
 export const socials = [
   { label: "Instagram", href: "#" },
   { label: "Behance", href: "#" },
-  { label: "LinkedIn", href: "#" },
   { label: "GitHub", href: "#" },
 ];
 
