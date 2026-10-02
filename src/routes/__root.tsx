@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { site } from "../data/site";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -79,16 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#080808" },
-      { title: "PIXEL STUDIO — Experiencias digitales e historias visuales" },
-      {
-        name: "description",
-        content:
-          "PIXEL STUDIO crea experiencias digitales, sitios web y contenido visual profesional mediante tecnología, fotografía y dirección creativa.",
-      },
-      { name: "author", content: "PIXEL STUDIO" },
-      { property: "og:site_name", content: "PIXEL STUDIO" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { title: site.title },
+      { name: "description", content: site.description },
+      { name: "author", content: site.name },
+      { property: "og:site_name", content: site.name },
     ],
     links: [
       {

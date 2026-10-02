@@ -5,6 +5,9 @@ export const site = {
   title: "PIXEL STUDIO — Experiencias digitales e historias visuales",
   description:
     "PIXEL STUDIO crea experiencias digitales, sitios web y contenido visual profesional mediante tecnología, fotografía y dirección creativa.",
+  url: "https://www.danielsierra.online",
+  ogImage: "/og-image.png",
+  locale: "es_CO",
   label: "ESTUDIO CREATIVO / 2026",
   disciplines: "DESARROLLO WEB · FOTOGRAFÍA · CONTENIDO VISUAL",
   copyright: "© 2026 PIXEL STUDIO",
