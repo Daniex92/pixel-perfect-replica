@@ -30,9 +30,9 @@ export const contact = {
 
 /** TODO: Replace placeholders with real PIXEL STUDIO social profiles. */
 export const socials = [
-  { label: "Instagram", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "GitHub", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/daniex_photo/" },
+  { label: "WhatsApp", href: "https://wa.me/573219931584" },
+  { label: "GitHub", href: "https://github.com/daniex-photo" },
 ];
 
 export const hero = {

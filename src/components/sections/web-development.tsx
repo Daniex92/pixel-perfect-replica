@@ -4,50 +4,35 @@ import { webdev } from "@/data/site";
 import { Reveal, RevealLines } from "@/components/ui/reveal";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
-/** Pure CSS/SVG browser chrome — no generated images. */
-function BrowserMockup({ variant }: { variant: 1 | 2 }) {
+const previewUrl = "https://elaltoeventos.com/";
+
+function BrowserPreview() {
   return (
-    <div className="border border-border bg-surface shadow-[var(--shadow-cinematic)]">
+    <div className="overflow-hidden border border-border bg-surface shadow-[var(--shadow-cinematic)]">
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-        <span className="h-1.5 w-1.5 rounded-full bg-foreground/25" />
-        <span className="h-1.5 w-1.5 rounded-full bg-foreground/25" />
-        <span className="h-1.5 w-1.5 rounded-full bg-violet/70" />
-        <span className="ml-3 h-4 flex-1 border border-border" />
-      </div>
-      <div className="relative p-6 pixel-grid">
-        {variant === 1 ? (
-          <div className="space-y-4">
-            <span className="block h-2 w-20 bg-foreground/20" />
-            <span className="block h-7 w-3/4 bg-foreground/30" />
-            <span className="block h-7 w-1/2 bg-foreground/15" />
-            <div className="grid grid-cols-3 gap-3 pt-4">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  className="block aspect-[4/3] border border-border"
-                  style={{ background: i === 1 ? "rgba(139,92,246,0.08)" : "transparent" }}
-                />
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-5 gap-3">
-            <div className="col-span-2 space-y-3">
-              <span className="block h-2 w-14 bg-violet/60" />
-              <span className="block h-4 w-full bg-foreground/25" />
-              <span className="block h-4 w-4/5 bg-foreground/15" />
-              <span className="block h-4 w-2/3 bg-foreground/10" />
-            </div>
-            <div className="col-span-3 aspect-[16/10] border border-border pixel-grid-fine" />
-          </div>
-        )}
-        <svg
-          aria-hidden
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          preserveAspectRatio="none"
+        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-foreground/25" />
+        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-foreground/25" />
+        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-violet/70" />
+        <div className="ml-3 flex h-7 min-w-0 flex-1 items-center border border-border px-3">
+          <span className="label-mono truncate text-muted-foreground">elaltoeventos.com</span>
+        </div>
+        <a
+          href={previewUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="label-mono shrink-0 text-muted-foreground transition-colors hover:text-foreground"
         >
-          <line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(34,211,238,0.18)" strokeWidth="1" />
-        </svg>
+          VISITAR ↗
+        </a>
+      </div>
+      <div className="relative aspect-[16/10] bg-background pixel-grid">
+        <iframe
+          src={previewUrl}
+          title="Vista previa interactiva de El Alto Cocina de Entorno"
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full border-0 bg-background"
+        />
       </div>
     </div>
   );
@@ -61,7 +46,6 @@ export function WebDevelopment() {
     offset: ["start end", "end start"],
   });
   const y1 = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : -40]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 30]);
 
   return (
     <section id="web" className="border-t border-border">
@@ -77,12 +61,9 @@ export function WebDevelopment() {
         </h2>
 
         <div className="mt-16 grid gap-16 lg:grid-cols-12 lg:gap-x-10">
-          <div className="space-y-8 lg:col-span-7">
+          <div className="lg:col-span-7">
             <motion.div style={{ y: y1 }}>
-              <BrowserMockup variant={1} />
-            </motion.div>
-            <motion.div style={{ y: y2 }} className="lg:ml-16">
-              <BrowserMockup variant={2} />
+              <BrowserPreview />
             </motion.div>
           </div>
 
@@ -92,9 +73,7 @@ export function WebDevelopment() {
                 <div className="border-t border-border py-6">
                   <div className="flex items-baseline gap-3">
                     <span aria-hidden className="h-1 w-1 bg-violet" />
-                    <h3 className="text-base font-normal uppercase tracking-[0.12em]">
-                      {f.title}
-                    </h3>
+                    <h3 className="text-base font-normal uppercase tracking-[0.12em]">{f.title}</h3>
                   </div>
                   <p className="body-lg mt-2 text-[0.95rem]">{f.text}</p>
                 </div>
